@@ -1,1 +1,36 @@
-<p>header works!</p>
+<header id="header" class="h-[4rem] xs:h-[4.5rem] bg-white fixed w-screen shadow-lg z-30">
+  <!-- navbar -->
+  <nav class="nav flex flex-wrap items-center justify-between px-0">
+    <!-- logo woy -->
+    <!-- <HeaderLogo class="flex-1 flex flex-no-shrink items-center mr-6 py-1 text-gray-500 ml-2" :min-screen="minScreen"/> -->
+    <div id="header-logo" class="flex-1 flex flex-no-shrink items-center mr-6 py-1 text-gray-500 ml-2">
+      <img src="../../../../assets/images/logo/logo_open_Food_Facts.png" alt="logo open food facts" class="w-24 mr-4" />
+      <p class="self-end text-3xl">
+        FOOD FACTS
+      </p>
+    </div>
+    <!-- Responsive Menu checkBox -->
+    <input id="menu-btn" class="menu-btn hidden" type="checkbox">
+    <label class="menu-icon block cursor-pointer px-2 py-2 relative select-none mr-4" [ngClass]="{'hidden' : desktop }" for="menu-btn">
+      <span class="navicon bg-grey-darkest flex items-center relative"></span>
+    </label>
+    <!-- Navigation links -->
+    <div class="menu border-b mymd:border-none flex justify-end items-center list-reset m-0 w-full mymd:w-auto relative mymd:flex -top-2 mymd:top-auto mymd:mr-4">
+      <!-- links ACCUEIL -->
+      <span (click)="menuItem()">
+        <a routerLink="" class="block mymd:inline-block px-2 py-2 no-underline text-gray-500 hover:text-gray-900 transition-500 font-bold cursor-pointer" routerLinkActive="text-gray-900 font-bold" routerLinkActive="active" >
+          ACCUEIL
+        </a>
+        <!-- <a v-else routerLink=""class="block mymd:inline-block px-2 py-2 no-underline text-gray-500 hover:text-gray-900 transition-500 font-bold" routerLinkActive="text-gray-900 font-bold">
+          ACCUEIL
+        </a> -->
+      </span>
+      <!-- links LINK 2 -->
+      <span class="block border-t mymd:border-none" (click)="menuItem()">
+        <a routerLink="link" class="block mymd:inline-block px-2 py-2 no-underline text-gray-500 hover:text-gray-900 transition-500 font-bold cursor-pointer" routerLinkActive="text-gray-900 font-bold" >
+          LINK 2
+        </a>
+      </span>
+    </div>  
+  </nav><!-- End navbar -->
+</header>
