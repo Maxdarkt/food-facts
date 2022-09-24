@@ -9,28 +9,18 @@ import { fromEvent } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   desktop!: boolean;
-  minScreen!: boolean;
 
   constructor( ) { }
 
   ngOnInit(): void {
     this.desktop = true;
-    this.minScreen = false;
 
     this.isDesktop();
-    this.isMinScreen();
-    window.addEventListener('resize', this.listenResize);
+    window.addEventListener('resize', this.isDesktop);
   }
 
-  listenResize(): void {
-    this.desktop = window.innerWidth > 985;
-    this.minScreen = window.innerWidth < 350;
-  }
   isDesktop(): void {
     this.desktop = window.innerWidth > 985;
-  }
-  isMinScreen(): void {
-    this.minScreen = window.innerWidth < 350;
   }
   menuItem(): void {
     if(!this.desktop) {
